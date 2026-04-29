@@ -17,11 +17,11 @@ jobs:
         - name: Cek isi image
           run: docker history imageku:latest
 
-                                                                                           - name: Login to GitHub Registry
-         run: echo ${{ secrets.TOKEN_GITHUB }} | docker login ghcr.io -u reiinzzz --password-stdin
+        - name: Login to GitHub Registry
+          run: echo ${{ secrets.TOKEN_GITHUB }} | docker login ghcr.io -u reiinzzz --password-stdin
 
-                                                                                           - name: Tag image
-                                                                                            run: docker tag imageku ghcr.io/reiinzzz/imageku:latest
+        - name: Tag image
+          run: docker tag imageku ghcr.io/reiinzzz/imageku:latest
 
-                                                                                           - name: Push Image
-                                                                                             run: docker push ghcr.io/reiinzzz/imageku:latest
+        - name: Push Image
+          run: docker push ghcr.io/reiinzzz/imageku:latest
